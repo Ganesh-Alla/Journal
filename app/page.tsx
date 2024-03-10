@@ -5,7 +5,7 @@ import EntryCard from '@/pages/EntryCard';
 
 
 export default async function Home() {
-
+"use server";
   const entries= await prisma.entry.findMany();
   // const { rows } = await sql`SELECT * FROM "Entry" `;
 
