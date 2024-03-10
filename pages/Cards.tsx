@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+
   import prisma from '@/lib/prisma';
   import EntryCard from '@/pages/EntryCard';
 
   const Cards = async () => {
-  "use server"
+  "use server";
   const entries = await prisma.entry.findMany({
       orderBy: {
           createdAt: 'desc',
