@@ -1,6 +1,7 @@
 import { Mood } from '@prisma/client'
 import React from 'react'
 import { redirect } from 'next/navigation'
+import prisma from '@/lib/prisma'
 
 async function createEntry(data:FormData) {
   "use server"
