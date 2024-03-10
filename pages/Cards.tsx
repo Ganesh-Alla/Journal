@@ -17,21 +17,21 @@ const Cards = () => {
     const [entries, setEntries] = useState<Entry[]>([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchEntries = async () => {
-            try {
-                const res = await fetch('/api/entry/fetch');
-                if(res){
-                    const data= await res.json();
-                    const newEntries = data.entries
-                    setEntries(newEntries);
-                    setLoading(false);
-                }
-            } catch (error) {
-                console.error('Error fetching entries:', error);
+    const fetchEntries = async () => {
+        try {
+            const res = await fetch('/api/entry/fetch');
+            if(res){
+                const data= await res.json();
+                const newEntries = data.entries
+                setEntries(newEntries);
+                setLoading(false);
             }
-        };
-        fetchEntries();
+        } catch (error) {
+            console.error('Error fetching entries:', error);
+        }
+    };
+    fetchEntries();
+    useEffect(() => {
         const intervalId = setInterval(fetchEntries, 10000);
         return () => clearInterval(intervalId);
     }, []);
