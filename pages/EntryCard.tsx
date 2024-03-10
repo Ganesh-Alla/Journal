@@ -19,6 +19,7 @@ async function deleteEntry(id:string) {
     .then(response => {
         if (response.status === 200) {
           // Status is 200, reload the page
+          alert("Delete Sucessfull")
           window.location.reload();
         } else {
           // Handle the case where the delete operation failed (e.g., status is not 200)
@@ -31,7 +32,7 @@ async function deleteEntry(id:string) {
       });
 }
 
-const EntryCard = ({id,title,content,mood}:Props)=>{
+const EntryCard = ({id,title,content,mood})=>{
 return (
     <article className='flex justify-between border border-blue-700 p-4'>
     <header>
