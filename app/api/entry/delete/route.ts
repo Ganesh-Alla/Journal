@@ -11,3 +11,4 @@ export async function DELETE(req: NextRequest, res: NextResponse) {
     console.error("Failed to delete entry", error);
     return NextResponse.json({ error: 'Failed to delete entry' }, { status: 500 });  }
 }
+
