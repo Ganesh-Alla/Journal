@@ -1,3 +1,4 @@
+export const revalidate=10;
 import prisma from '@/lib/prisma';
 import { sql } from "@vercel/postgres";
 import EntryCard from '@/pages/EntryCard';
