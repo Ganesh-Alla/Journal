@@ -32,7 +32,7 @@ async function deleteEntry(id:string) {
       });
 }
 
-const EntryCard = ({id,title,content,mood})=>{
+const EntryCard = ({id,title,content,mood}:Props)=>{
 return (
     <article className='flex justify-between border border-blue-700 p-4'>
     <header>
