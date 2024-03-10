@@ -3,8 +3,8 @@ import prisma from '@/lib/prisma';
 import EntryCard from '@/pages/EntryCard';
 
 const Home = async () => {
+'use server'
 
-"use server"
 const entries = await prisma.entry.findMany({
     orderBy: {
         createdAt: 'desc',
